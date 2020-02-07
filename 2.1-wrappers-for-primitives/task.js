@@ -36,7 +36,7 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
     let p = localPercent / 100 / 12;
 
     let perMonth = returnAmont * (p + p / ((Math.pow((1 + p), diff)) - 1));
-    let totalAmount = parseFloat(diff * perMonth).toFixed(2);
+    let totalAmount = parseFloat(parseFloat(diff * perMonth).toFixed(2));
 
     console.log(totalAmount);
     return totalAmount;
@@ -50,9 +50,12 @@ function sayHello() {
 }
 
 function getGreeting(name) {
-    if (name === '' || name === 'null' || name === 'undefined') {
+    if (name === '' || name === null || name === undefined) {
         name = 'Аноним';
     }
     
-    return `Привет, мир! Меня зовут ${name}.`;
+    return `Привет, мир! Меня зовут ${name}`;
 }
+
+
+
